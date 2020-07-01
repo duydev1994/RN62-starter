@@ -1,4 +1,4 @@
-import {take, put, call, fork, select} from 'redux-saga/effects';
+import {take, call, fork, select} from 'redux-saga/effects';
 import {Actions} from 'react-native-router-flux';
 import {LOAD} from 'redux-storage';
 import {getUser} from '../reducers/selectors';

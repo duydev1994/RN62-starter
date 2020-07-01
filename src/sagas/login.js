@@ -1,7 +1,6 @@
-import React from 'react';
-import { take, put, call, fork, select } from 'redux-saga/effects'
+import {take, put, call, fork} from 'redux-saga/effects';
 import * as types from '../actions/actionTypes';
-import { loginSuccess, loginFailure } from '../actions/loginActions'
+import {loginSuccess, loginFailure} from '../actions/loginActions';
 
 const loginData = {
   token: 'my secret token',
@@ -10,7 +9,6 @@ const loginData = {
     email: 'user@gmail.com',
   },
 };
-
 
 function loginCall({email, password}) {
   return new Promise((resolve, reject) => {
@@ -21,18 +19,18 @@ function loginCall({email, password}) {
         reject({status: 'wrong email or password'});
       }
     }, 1000); // 1 second
-  })
+  });
 }
 
-function *watchLoginRequest() {
-  while(true) {
-    const { email, password } = yield take(types.LOGIN.REQUEST);
+function* watchLoginRequest() {
+  while (true) {
+    const {email, password} = yield take(types.LOGIN.REQUEST);
 
     try {
       const payload = {
         email,
         password,
-      }
+      };
       const response = yield call(loginCall, payload);
 
       yield put(loginSuccess(response));
@@ -43,7 +41,6 @@ function *watchLoginRequest() {
     }
   }
 }
-
 
 export default function* root() {
   yield fork(watchLoginRequest);

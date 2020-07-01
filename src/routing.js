@@ -8,8 +8,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {Router, Scene} from 'react-native-router-flux';
 
-import LoginScreen from './containers/LoginScreen';
-import HomeScreen from './containers/HomeScreen';
+import LoginScreen from './pages/Login/LoginScreen';
+import HomeScreen from './pages/HomeScreen';
 
 class TabIcon extends Component {
   render() {
@@ -29,7 +29,7 @@ class TabIcon extends Component {
   }
 }
 
-class MyApp extends Component {
+class Routing extends Component {
   componentDidMount() {
     StatusBar.setBarStyle('light-content');
   }
@@ -109,4 +109,4 @@ const mapStateToProps = function(state) {
   };
 };
 
-export default connect(mapStateToProps)(MyApp);
+export default connect(mapStateToProps)(Routing);
