@@ -6,20 +6,18 @@ npm install
 
 npm run ios
 
-<<<<<<< HEAD
 # Compoent using
 
 [UI using component](https://react-native-elements.github.io/react-native-elements/docs/overview.html)
-=======
 
-Project incluted 
+Project incluted
 
     "@react-native-community/async-storage": "^1.11.0"
-    "@react-native-community/masked-view": "^0.1.10"   
-    "@react-navigation/native": "^5.5.1"    
+    "@react-native-community/masked-view": "^0.1.10"
+    "@react-navigation/native": "^5.5.1"
     "react": "16.11.0",
     "react-native": "0.62.2",
-    "react-native-gesture-handler": "^1.6.1" 
+    "react-native-gesture-handler": "^1.6.1"
     "react-native-navbar": "^2.1.0"
     "react-native-reanimated": "^1.9.0"
     "react-native-router-flux": "^4.2.0"
@@ -32,5 +30,3 @@ Project incluted
     "redux-storage": "^4.1.2"
     "redux-storage-engine-reactnativeasyncstorage": "^1.0.7"
     "remote-redux-devtools": "^0.5.16"
-    
->>>>>>> 3ab9706b4c22c8795897398a4f1f412ea180ec76
