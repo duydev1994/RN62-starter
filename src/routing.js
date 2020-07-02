@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {Router, Scene} from 'react-native-router-flux';
 
-import LoginScreen from './pages/Login/LoginScreen';
+import LoginScreen from './pages/auth/loginScreen';
 import HomeScreen from './pages/HomeScreen';
 
 class TabIcon extends Component {
