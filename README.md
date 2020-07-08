@@ -1,5 +1,13 @@
 <img src="https://miro.medium.com/max/1400/1*Or0o-_dFsZe1ahMAC2yLZQ.png" style=" width:100%" />
 
+# Features
+
+- [x] Login Account Srceen
+- [ ] Register Account Srceen
+- [ ] Multilanguage React and Redux
+- [ ] CI-CD Appcenter
+- [ ] Login use firebase database
+
 # How to run Project
 
 git clone git@github.com:duydev1994/react-native-redux-saga-flux-router-starter.git ProjectName
@@ -18,6 +26,8 @@ npm run ios
 
 [react-native-router-flux](https://github.com/aksonov/react-native-router-flux)
 
-# DEMO
+[rnfirebase](https://rnfirebase.io/)
 
-<img src="demo-imges/screen-login.png" style="width:200px" />
+<!-- # DEMO
+
+<img src="demo-imges/screen-login.png" style="width:200px" /> -->
