@@ -1,12 +1,24 @@
-<img src="https://miro.medium.com/max/1400/1*Or0o-_dFsZe1ahMAC2yLZQ.png" style=" width:100%" />
+<img src="https://miro.medium.com/max/1000/1*c4tVga7oakzLCgIQ3JHhhg.jpeg" style=" width:100%" />
 
 # Features
 
+- [x] CI-CD Appcenter
+- [ ] Login use firebase database
+- [ ] Login use firebase phone number
+- [ ] Login use google
+- [ ] Login use facebook
+- [ ] Login use github
+
+- [ ] Register use firebase database
+- [ ] Register use phone number
+
+- [ ] Multilanguage React and Redux
+
+# Srceens
+
 - [x] Login Account Srceen
 - [ ] Register Account Srceen
-- [ ] Multilanguage React and Redux
-- [ ] CI-CD Appcenter
-- [ ] Login use firebase database
+- [ ] Home Srceen
 
 # How to run Project
 
@@ -31,3 +43,5 @@ npm run ios
 <!-- # DEMO
 
 <img src="demo-imges/screen-login.png" style="width:200px" /> -->
+
+![](https://build.appcenter.ms/v0.1/apps/3e050d35-18a5-470e-ac10-2a54e544ab8d/branches/master/badge)

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "660398429684",
+    "firebase_url": "https://xdev-rn62-starter.firebaseio.com",
+    "project_id": "xdev-rn62-starter",
+    "storage_bucket": "xdev-rn62-starter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660398429684:android:c37b201619682af8de95a1",
+        "android_client_info": {
+          "package_name": "asia.xdev.rn.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660398429684-ds56h5suajuj80p0mviin64k45qbm5ss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3L66u06jBIOPIe6h117RNK9KKGZTUlNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660398429684-ds56h5suajuj80p0mviin64k45qbm5ss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
