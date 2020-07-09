@@ -2,13 +2,14 @@
   "name": "react-native-starter",
   "author": "DUY TRAN <tdduy.dev@gmail.com>",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "fix-run-android-x": "npx jetify"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
@@ -45,6 +46,7 @@
     "babel-jest": "24.9.0",
     "eslint": "6.8.0",
     "jest": "24.9.0",
+    "jetifier": "^1.6.6",
     "metro-react-native-babel-preset": "0.58.0",
     "react-test-renderer": "16.11.0"
   },
