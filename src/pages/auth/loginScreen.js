@@ -7,17 +7,20 @@ import {
   Image,
   Dimensions,
   ScrollView,
+  ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import LinearGradient from 'react-native-linear-gradient';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as loginActions from '../../actions/loginActions';
-import {Input, Text, Button} from 'react-native-elements';
+import {Input, Text} from 'react-native-elements';
+import I18n from '../../i18n';
 
 class LoginScreen extends Component {
-  state = {email: 'user@gmail.com', password: 'user'};
+  state = {email: '', password: ''};
 
   loginEmail = () => {
     const {email, password} = this.state;
@@ -26,64 +29,71 @@ class LoginScreen extends Component {
 
   render() {
     const {email, password} = this.state;
-    const {user} = this.props;
-
-    let error;
-    if (user.errorMessage !== '') {
-      error = <Text style={styles.error}>{user.errorMessage}</Text>;
-    }
 
     return (
       <SafeAreaView>
-        <ScrollView bounces={false}>
-          <KeyboardAvoidingView behavior={'position'} style={styles.container}>
-            <View style={styles.container}>
-              <View style={styles.boxFrom}>
-                <Image
-                  style={styles.icon}
-                  source={require('../../assets/Login/icon.gif')}
-                />
-                <Image
-                  style={styles.logo}
-                  source={require('../../assets/logo-trans.png')}
-                />
-
-                <View style={styles.input}>
-                  {error}
-                  <Input
-                    containerStyle={styles.input}
-                    placeholder="INPUT WITH ICON"
-                    onChangeText={email => this.setState({email})}
-                    value={email}
-                    leftIcon={{type: 'font-awesome', name: 'envelope'}}
+        <ImageBackground
+          style={styles.bg}
+          source={require('../../assets/Login/bg.jpg')}>
+          <ScrollView bounces={false}>
+            <KeyboardAvoidingView behavior={'height'} style={styles.container}>
+              <View style={styles.container}>
+                <View style={styles.boxFrom}>
+                  <Image
+                    style={styles.logo}
+                    source={require('../../assets/logo-trans.png')}
                   />
+                  <View style={styles.input}>
+                    <Input
+                      inputStyle={styles.input}
+                      placeholder={I18n.t('greeting')}
+                      inputContainerStyle={styles.input}
+                      onChangeText={email => this.setState({email})}
+                      value={email}
+                      leftIcon={{
+                        type: 'font-awesome',
+                        name: 'envelope',
+                        color: '#ffff',
+                      }}
+                    />
 
-                  <Input
-                    secureTextEntry={true}
-                    containerStyle={styles.input}
-                    placeholder="INPUT WITH ICON"
-                    errorMessage=""
-                    onChangeText={password => this.setState({password})}
-                    value={password}
-                    leftIcon={{type: 'font-awesome', name: 'unlock-alt'}}
-                  />
+                    <Input
+                      secureTextEntry={true}
+                      // inputStyle={styles.input}
+                      inputContainerStyle={styles.input}
+                      placeholder="PASSWORD"
+                      errorMessage=""
+                      onChangeText={password => this.setState({password})}
+                      value={password}
+                      leftIcon={{
+                        type: 'font-awesome',
+                        name: 'unlock-alt',
+                        color: '#ffff',
+                      }}
+                    />
+                  </View>
+
+                  <View style={styles.GLogin}>
+                    <TouchableOpacity onPress={this.loginEmail}>
+                      <LinearGradient
+                        colors={['rgba(34,193,195,1)', 'rgba(45,46,253,1)']}
+                        style={styles.linearGradient}>
+                        <Text style={styles.btnLogin}> LOGIN </Text>
+                      </LinearGradient>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.loginEmail}>
+                      <Image
+                        style={styles.btnLoginFaceID}
+                        onPress={this.loginEmail}
+                        source={require('../../assets/Login/icon-face-id.png')}
+                      />
+                    </TouchableOpacity>
+                  </View>
                 </View>
-                <Button
-                  buttonStyle={styles.btnLogin}
-                  onPress={this.loginEmail}
-                  icon={<Icon name="sign-in" size={15} color="white" />}
-                  title=" Login"
-                />
-
-                <Image
-                  style={styles.btnLoginFaceID}
-                  onPress={this.loginEmail}
-                  source={require('../../assets/Login/icon-face-id.png')}
-                />
               </View>
-            </View>
-          </KeyboardAvoidingView>
-        </ScrollView>
+            </KeyboardAvoidingView>
+          </ScrollView>
+        </ImageBackground>
       </SafeAreaView>
     );
   }
@@ -93,13 +103,25 @@ const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
+  GLogin: {
+    flexDirection: 'row',
+  },
   error: {
     color: 'red',
     textAlign: 'center',
   },
-  btnLogin: {
-    height: 40,
+  linearGradient: {
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5,
     width: 200,
+  },
+  btnLogin: {
+    fontSize: 18,
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
   },
   container: {
     flex: 1,
@@ -107,12 +129,9 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
   },
-  icon: {
-    height: 200,
-    width: 200,
-  },
   input: {
     width: windowWidth * 0.7,
+    color: '#fff',
   },
   logo: {
     height: 100,
@@ -120,15 +139,19 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   btnLoginFaceID: {
-    marginTop: 20,
+    left: 20,
     height: 50,
     width: 50,
   },
   boxFrom: {
-    height: windowHeight * 0.8,
+    height: windowHeight * 0.6,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
+  },
+  bg: {
+    width: windowWidth,
+    height: windowHeight,
   },
 });
 

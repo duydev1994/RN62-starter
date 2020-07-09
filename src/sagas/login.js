@@ -1,6 +1,7 @@
 import {take, put, call, fork} from 'redux-saga/effects';
 import * as types from '../actions/actionTypes';
 import {loginSuccess, loginFailure} from '../actions/loginActions';
+import {Alert} from 'react-native';
 
 const loginData = {
   token: 'my secret token',
@@ -12,13 +13,12 @@ const loginData = {
 
 function loginCall({email, password}) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (email == 'user@gmail.com') {
-        resolve(loginData);
-      } else {
-        reject({status: 'wrong email or password'});
-      }
-    }, 1000); // 1 second
+    if (email === 'user@gmail.com') {
+      resolve(loginData);
+    } else {
+      Alert.alert('Thông báo đăng nhập', 'wrong email or password');
+      reject({status: 'wrong email or password'});
+    }
   });
 }
 
