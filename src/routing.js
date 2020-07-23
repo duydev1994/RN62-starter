@@ -10,6 +10,7 @@ import {Router, Scene} from 'react-native-router-flux';
 
 import LoginScreen from './pages/auth/loginScreen';
 import HomeScreen from './pages/HomeScreen';
+import RegsiterScreen from './pages/auth/regsiterScreen';
 
 class TabIcon extends Component {
   render() {
@@ -53,6 +54,13 @@ class Routing extends Component {
               type="reset"
               duration={1}
               initial={true}>
+              <Scene
+                key="home"
+                title="HomeScreen"
+                icon={TabIcon}
+                hideNavBar={true}
+                component={HomeScreen}
+              />
               <Scene
                 key="home"
                 title="HomeScreen"

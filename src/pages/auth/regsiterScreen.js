@@ -7,11 +7,11 @@ import {
   Image,
   Dimensions,
   ScrollView,
+  ImageBackground,
   TouchableOpacity,
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
-import {Actions} from 'react-native-router-flux';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -19,7 +19,7 @@ import * as loginActions from '../../actions/loginActions';
 import {Input, Text} from 'react-native-elements';
 import I18n from '../../i18n';
 
-class LoginScreen extends Component {
+class RegsiterScreen extends Component {
   state = {email: '', password: ''};
 
   loginEmail = () => {
@@ -86,7 +86,7 @@ class LoginScreen extends Component {
                 </View>
               </View>
               <View style={styles.regsiter}>
-                <TouchableOpacity onPress={Actions.register}>
+                <TouchableOpacity onPress={{}}>
                   <Text style={styles.regsiterTitle}>
                     {I18n.t('login.regsiter').toUpperCase()}
                   </Text>
@@ -178,4 +178,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(LoginScreen);
+)(RegsiterScreen);

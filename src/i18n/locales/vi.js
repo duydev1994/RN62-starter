@@ -1,3 +1,12 @@
 export default {
-  greeting: 'Xin Chao!',
+  login: {
+    title: 'Login',
+    regsiter: 'Regsiter',
+  },
+  input: {
+    title: {
+      username: 'Email',
+      password: 'Password',
+    },
+  },
 };
